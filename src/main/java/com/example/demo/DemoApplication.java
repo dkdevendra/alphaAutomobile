@@ -15,12 +15,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @SpringBootApplication(scanBasePackages= "com.*")
 @EnableJpaRepositories(basePackages = "com.*")
 public class DemoApplication {
-
-
 	public static void main(String[] args) {
-
 		System.out.println("Welcome to Alpha Automobile.");
-
 		AutomobileService automobileService = new AutomobileService();
 
 		automobileService.setServiceId(1);

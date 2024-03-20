@@ -13,8 +13,6 @@ public class AutomobileController {
 
     @Autowired
     AutomobileSercicesImpl automobileServices;
-
-
     @GetMapping("/hello")
     public String hello(){
         return "Welcome to alpha automobile";
