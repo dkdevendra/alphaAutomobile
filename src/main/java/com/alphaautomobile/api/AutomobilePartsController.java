@@ -1,7 +1,6 @@
 package com.alphaautomobile.api;
 
 import com.alphaautomobile.dto.AutomobilePartsDTO;
-import com.alphaautomobile.dto.AutomobileServiceDTO;
 import com.alphaautomobile.services.impl.AutomobilePartsImpl;
 import com.alphaautomobilebeans.AutomobileParts;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +15,16 @@ AutomobilePartsController {
     @Autowired
     AutomobilePartsImpl automobileParts;
 
-    @GetMapping("all_parts")
+    @GetMapping("all_parts")//search_part
     public List<AutomobilePartsDTO> getAllParts(){
     return automobileParts.getAllParts();
     }
+//    @GetMapping("search_parts")
+//    public List<AutomobileParts> getSearchParts(@RequestParam AutomobileParts parts){
+//        return automobileParts.getSearchName();
+//    }
     @PostMapping("add-parts")
+    //(request param
     public String addparts(@RequestBody AutomobilePartsDTO partsDTO){
         return automobileParts.Addparts(partsDTO);
     }
@@ -37,5 +41,7 @@ AutomobilePartsController {
         return  automobileParts.deleteparts(inventryId);
     }
 }
+
+
 
 

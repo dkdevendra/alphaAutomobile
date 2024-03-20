@@ -36,12 +36,14 @@ public class AutomobilePartsImpl implements AutomobilePartsController {
         System.out.println("add part successfully");
         return "Part added successfully";
     }
+//    public  String Searchparts(AutomobilePartsDTO automobilePartsDTO){
+//
+//    }
 
     @Override
     public List<AutomobilePartsDTO> getAllParts() {
         System.out.println("Get all Services method getting called");
         List<AutomobilePartsDTO>partsList = new ArrayList<>();
-
         List<AutomobileParts> automobilePartsList = automobilePartRepository.getAutomobilePartsList();
         for(AutomobileParts automobileParts: automobilePartsList){
             AutomobilePartsDTO automobilePartsDTO = new AutomobilePartsDTO();
@@ -54,15 +56,37 @@ public class AutomobilePartsImpl implements AutomobilePartsController {
             automobilePartsDTO.setPartCount(automobileParts.getPartCount());
             automobilePartsDTO.setServiceRepairPart(automobileParts.getServiceRepairPart());
             automobilePartsDTO.setUpdatingDate(automobileParts.getUpdatingDate());
+            if(null != automobileParts.getPartAvailable() && automobileParts.getPartAvailable().equalsIgnoreCase("yes"));{
+                partsList.add(automobilePartsDTO);
 
-            partsList.add(automobilePartsDTO);
+            }
         }
         System.out.println("Returning list of services ......................."+partsList.toString());
         return partsList;
-
-
     }
-
+//    @Override
+//    public List<AutomobileParts>getSearchName() {
+//        System.out.println("get all search name");
+//        List<AutomobileParts>partsNameList = new ArrayList<>();
+//        List<AutomobileParts> automobilePartsList = automobilePartRepository.getAutomobilePartsList();
+//        for(AutomobileParts automobileParts: automobilePartsList){
+//            AutomobilePartsDTO automobilePartsDTO = new AutomobilePartsDTO();
+//            automobilePartsDTO.setInventoryId(automobileParts.getInventoryId());
+//            automobilePartsDTO.setPartName(automobileParts.getPartName());
+//            automobilePartsDTO.setDescription(automobileParts.getPartDescription());
+//            automobilePartsDTO.setPartPrice(automobileParts.getPartPrice());
+//            automobilePartsDTO.setPartType(automobileParts.getPartType());
+//            automobilePartsDTO.setPartAvailable(automobileParts.getPartAvailable());
+//            automobilePartsDTO.setPartCount(automobileParts.getPartCount());
+//            automobilePartsDTO.setServiceRepairPart(automobileParts.getServiceRepairPart());
+//            automobilePartsDTO.setUpdatingDate(automobileParts.getUpdatingDate());
+//
+//            partsNameList.add(automobileParts);
+//        }
+//        System.out.println("Returning list of part Name" +
+//                " ......................."+partsNameList.toString());
+//        return  partsNameList;
+//    }
     @Override
     public String updateparts(AutomobilePartsDTO automobileParts) {
 

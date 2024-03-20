@@ -20,9 +20,15 @@ public interface AutomobilePartRepository extends JpaRepository<AutomobileParts,
 
     @Query(nativeQuery = true, value = "select * from automobile_parts")
     List<AutomobileParts> getAutomobilePartsList();
+//    @Query(nativeQuery = true, value = "select * from automobile_parts where part_name Like *ady")
+//    List<AutomobileParts> getAutomobilePartsList();
     @Query(nativeQuery = true, value ="select * from automobile_parts where part_id =:partsId" )
     Optional<AutomobileParts> getAutomobileParts(@Param("partsId")int partsId);
     @Query(nativeQuery = true,value ="delete from automobile_parts where inventory_Id =:inventoryId" )
     Optional<AutomobileParts> deleteAutomobileParts(@Param("inventoryId")String  inventoryId);
+
+
+
+
 
 }
