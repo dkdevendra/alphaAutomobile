@@ -1,7 +1,7 @@
 package com.alphaautomobile.api;
 
 import com.alphaautomobile.dto.AutomobileServiceDTO;
-import com.alphaautomobile.services.impl.AutomobileSercicesImpl;
+import com.alphaautomobile.services.impl.AutomobileServicesImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,10 +9,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("")
-public class AutomobileController {
+public class AutomobileServicesController {
 
     @Autowired
-    AutomobileSercicesImpl automobileServices;
+    AutomobileServicesImpl automobileServices;
     @GetMapping("/hello")
     public String hello(){
         return "Welcome to alpha automobile";

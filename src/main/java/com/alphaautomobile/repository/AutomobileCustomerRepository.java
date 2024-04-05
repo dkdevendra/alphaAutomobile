@@ -6,7 +6,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
 import java.util.Optional;
 @Component
@@ -14,8 +13,8 @@ import java.util.Optional;
 public interface AutomobileCustomerRepository extends JpaRepository<AutomobileCustomerdetail, Integer> {
 //    public List<AutomobileParts> findByName(String name);
 
-    @Query(nativeQuery = true, value = "select * from automobile_customerDetail")
+    @Query(nativeQuery = true, value = "select * from customer_details")
     List<AutomobileCustomerdetail> getAllDetails();
-    @Query(nativeQuery = true, value ="select * from automobile_customerDetail where customer_name =:customerName" )
+    @Query(nativeQuery = true, value ="select * from customer_details where customer_name =:customerName" )
     Optional<AutomobileCustomerdetail> getAutomobileCustomerdetail(@Param("customerName")String customerName);
 }

@@ -6,7 +6,6 @@ import com.alphaautomobile.services.AutomobilePartsController;
 import com.alphaautomobilebeans.AutomobileParts;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
