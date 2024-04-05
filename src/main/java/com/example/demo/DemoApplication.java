@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import com.alphaautomobile.services.impl.AutomobileSercicesImpl;
+import com.alphaautomobile.services.impl.AutomobileServicesImpl;
 import com.alphaautomobilebeans.AutomobileService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -24,7 +24,7 @@ public class DemoApplication {
 		automobileService.setServiceName("Devendra");
 		automobileService.setServiceDetails("Car services");
 
-		AutomobileSercicesImpl automobileServices = new AutomobileSercicesImpl();
+		AutomobileServicesImpl automobileServices = new AutomobileServicesImpl();
 
 		AutomobileService automobileService1 = new AutomobileService();
 		automobileService1.setServiceId(2);
